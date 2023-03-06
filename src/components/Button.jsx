@@ -1,16 +1,27 @@
 //import { useState } from 'react'
 
-import '../styles/peppo.css'
+import '../styles/button.css'
 
-function peppo() {
+function Button(content, variant, clbk) {
 
+  function renderClasses() {
+    let classes = ['Button', 'text-centre', 'd-flex']
+    return classes.json(" ")
+  }
+
+  function componentClickHandler(e){
+    console.log("Button Clicked")
+
+    if (clbk !== undefined && variant !== "disabled") {
+      clbk()
+    }
+
+  }
   return (
-    <div className="peppo">
-        <li>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id nostrum recusandae
-        </li>
+    <div onClick={componentClickHandler()} className={renderClasses()}>
+           {content}
     </div>
   )
 }
 
-export default peppo
+export default Button

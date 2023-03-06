@@ -8,6 +8,8 @@ import Button from './components/button'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [joke, setJoke] = useState(0)
+
 
   return (
     <div className="App">
@@ -31,6 +33,17 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      <Button 
+      content="Hello World"
+      variant="disabilited"
+      
+      />
+       <Button 
+      content="Hello World"
+      variant="abilited"
+      />
+
     </div>
   )
 }
