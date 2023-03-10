@@ -2,24 +2,23 @@
 
 import '../styles/button.css'
 
-function Button(content, variant, clbk) {
+function Button({content, variant, clbk}) {
 
   function renderClasses() {
-    let classes = ['Button', 'text-centre', 'd-flex']
-    return classes.json(" ")
+    let classes = ['Button', 'text-centre', 'd-flex', variant]
+    return classes.join(" ")
   }
 
   function componentClickHandler(e){
     console.log("Button Clicked")
 
-    if (clbk !== undefined && variant !== "disabled") {
-      clbk()
-    }
+    clbk()
 
   }
   return (
     <div onClick={componentClickHandler()} className={renderClasses()}>
-           {content}
+      {content}
+      {console.log(content)}
     </div>
   )
 }
