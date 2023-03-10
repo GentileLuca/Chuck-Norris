@@ -1,5 +1,4 @@
-//import { useState } from 'react'
-
+import { useState } from 'react'
 import '../styles/button.css'
 
 function Button({content, variant, clbk}) {
@@ -10,15 +9,15 @@ function Button({content, variant, clbk}) {
   }
 
   function componentClickHandler(e){
-    console.log("Button Clicked")
+    console.log("Ho cliccato il componente")
 
-    clbk()
-
+    if(clbk !== undefined && variant !== "disabled"){
+      clbk()
+    }
   }
   return (
     <div onClick={componentClickHandler()} className={renderClasses()}>
-      {content}
-      {console.log(content)}
+        {content}
     </div>
   )
 }
