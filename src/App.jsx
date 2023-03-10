@@ -3,11 +3,14 @@ import './styles/App.css'
 
 
 import Button from './components/button'
+import EditorialContent from './components/EditorialContent'
+
 
 
 function App() {
   const [count, setCount] = useState(0)
   const [joke, setJoke] = useState(0)
+  
 
   function ue(){
     console.log("Hello World")
@@ -17,18 +20,34 @@ function App() {
   return (
     <div className="App">
 
-      <Button 
-      content="Hello World"
-      variant="disabilited"
-      clbk = {ue}
-      
+      <EditorialContent
+        title="Webapp API Chuck Norris"
+        content="Design di una pagina che utilizza la API di chucknorris.io per generare alla pressione di un pulsante una battuta del tipo che selezioni nel menu a tendina qui sotto."
       />
-       <Button 
-      content="Hello World"
-      variant="abilited"
-      clbk = {ue}
+{
+  /*{ joke !== "" &&
+        <div id="joke">{joke}</div>
+
+      }
+      <Button 
+      content="Carica il joke"
+      variant="dark"
+      clbk = {loadJoke}    
       />
 
+      <Button 
+      content="Copia il testo"
+      variant={joke === "" ? "disabled" : ""}
+      clbk = {copyText}
+      />
+
+       <Button 
+      content="Copia il testo"
+      variant="disabled"
+      clbk = {copyText}
+      />*/
+} 
+    
     </div>
   )
 }
